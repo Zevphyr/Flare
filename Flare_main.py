@@ -17,14 +17,6 @@ import PyQt5.QtMultimedia as M
 import sys
 
 
-app=C.QCoreApplication(sys.argv)
-
-url= C.QUrl.fromLocalFile("./some.mp3")
-content= M.QMediaContent(url)
-player = M.QMediaPlayer()
-player.setMedia(content)
-player.play()
-
 class Window(QtGui.QPushButton):
     def __init__(self):
         QtGui.QPushButton.__init__(self, 'Choose File')
@@ -54,11 +46,15 @@ class Window(QtGui.QPushButton):
 
 if __name__ == '__main__':
 
-    import sys
+
     app = QtGui.QApplication(sys.argv)
-    app.setApplicationName('Flare')
+    app.setApplicationName('Flare'
     win = Window()
     win.resize(200, 100)
     win.show()
+    content= M.QMediaContent(url)
+    player = M.QMediaPlayer()
+    player.setMedia(content)
+    player.play()                       
     player.stateChanged.connect(app.quit)
     sys.exit(app.exec_())
