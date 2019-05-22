@@ -24,7 +24,7 @@ class App(QMainWindow):
         super().__init__()
         self.player = QMediaPlayer()
         self.playlist = QMediaPlaylist()
-        self.title = 'PyTunes'
+        self.title = 'Flare'
         self.left = 300
         self.top = 300
         self.width = 300
